@@ -54,7 +54,7 @@
 						
 									<img src="<?php echo 'profile-pic/' . $seesion_user . '.jpg'; ?>" alt="" class="thumb-lg img-circle" style="width: 200px;height: 200px;">
 								<?php else: ?>
-									<img src="profile-pic/default.png" alt="" class="thumb-lg img-circle" style="width: 100px;height: 100px;">    
+									<img src="default.png" alt="" class="thumb-lg img-circle" style="width: 200px;height: 200px;">    
 								<?php endif; ?>
 							</div>
 						</a>
