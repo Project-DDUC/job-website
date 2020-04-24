@@ -101,10 +101,10 @@
 				<!-- SIDEBAR USER TITLE -->
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
-						Anubhav Kharwar
+						Name
 					</div>
 					<div class="profile-usertitle-job">
-						Developer
+					          Title
 					</div>
 				</div>
 				<!-- END SIDEBAR USER TITLE -->
