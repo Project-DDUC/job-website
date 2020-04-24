@@ -76,7 +76,7 @@
 									<?php if (file_exists('profile-pic/' . $seesion_user . '.jpg')): ?>
 										<img src="<?php echo 'profile-pic/' . $seesion_user . '.jpg'; ?>" alt="" id="change-profile-pic" style="width: 50%;">
 									<?php else: ?>
-										<img src="profile-pic/default.png" alt="" id="change-profile-pic" style="width: 40%;">    
+										<img src="default.png" alt="" id="change-profile-pic" style="width: 40%;">    
 									<?php endif; ?>
 
 								</div>
