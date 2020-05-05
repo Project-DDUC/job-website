@@ -1,3 +1,10 @@
+<?php
+  if(isset($_SESSION['login_user']))
+  {
+    header("location:profile.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,68 +21,32 @@
 <div class="sign-in-form">
             <img src="pic.png">
             <form action="login.php" method="post">
-                <input type ="text" placeholder="User Name" class="txt" name="UserName">
-                <input type ="email" placeholder="Email" class="txt" name="Email">
-                <input type ="password" placeholder="Password" class="txt" name="Password">
-                <input type ="password" placeholder="Confirm Password" class="txt" name="Cpass">
-                <input type="submit" name="submit1" value="Sign In" class="btn1">
-                <?php
-      
-      require_once('connection.php');
+                <input type ="text" placeholder="User Name" class="txt" name="username" required>
+                <input type ="password" placeholder="password" class="txt" name="password" required>
+                <input type="submit" name="submit" value="Sign In" class="btn1">
 
-     if(isset($_POST['submit1']))
-       {
-           $UserName = mysqli_real_escape_string($con,$_POST['UserName']);
-           $Email = mysqli_real_escape_string($con,$_POST['Email']);
-           $Password = mysqli_real_escape_string($con,$_POST['Password']);
-           $CPassword = mysqli_real_escape_string($con,$_POST['Cpass']);
-
-           if(empty($UserName) || empty($Email) || empty($Password) || empty($CPassword))
-           {
-               echo 'Please fill in the Blanks';
-           }
-
-           if($Password!=$CPassword)
-           {
-               echo 'Password Not Matched';
-           }
-           else
-           {
-                $Pass = md5($Password);
-                $sql = "insert into users (UName,Email,Password) values ('$UserName','$Email','$Pass')";
-                $result = mysqli_query($con,$sql);
-
-                if($result)
-                {
-                    echo '';
-                }
-
-                else
-                {
-                     
-                    echo 'Please Check your Query';
-
-                }
-           }
-       }
-
-?>
-            
-            </form>
-            <form action="signup.php" method="post">
-                <input type="submit" name="submit2" value="Sign Up" class="btn2" name="Sign Up">
-                
-                <?php
-                    require_once('connection.php');
-
-                       if(isset($_POST['submit2']))
-                       {
-                           echo '';
-                       }
-                ?>
-                </form>
         </div>
         
 <?php include 'scripts.php';?>
 </body>
 </html>
+
+<?php
+    if (isset($_POST['submit']))
+        {     
+    include("con1.php");
+    session_start();
+    $username=$_POST['username'];
+    $password=$_POST['password'];
+    $_SESSION['login_user']=$username; 
+    $query = mysqli_query($connect,"SELECT username FROM logins WHERE username='$username' and password='$password'");
+     if (mysqli_num_rows($query) != 0)
+    {
+     echo "<script language='javascript' type='text/javascript'> location.href='profile.php' </script>";   
+      }
+      else
+      {
+    echo "<script type='text/javascript'>alert('User Name Or Password Invalid!')</script>";
+    }
+    }
+    ?>

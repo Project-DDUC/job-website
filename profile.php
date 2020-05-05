@@ -1,3 +1,8 @@
+<?php
+    session_start();
+     if(isset($_SESSION['login_user']))
+     	 {
+     	?>
 <?php $seesion_user = "stint"; ?>
 <!DOCTYPE html>
 <html>
@@ -76,7 +81,7 @@
 									<?php if (file_exists('profile-pic/' . $seesion_user . '.jpg')): ?>
 										<img src="<?php echo 'profile-pic/' . $seesion_user . '.jpg'; ?>" alt="" id="change-profile-pic" style="width: 50%;">
 									<?php else: ?>
-										<img src="default.png" alt="" id="change-profile-pic" style="width: 40%;">    
+										<img src="profile-pic/default.png" alt="" id="change-profile-pic" style="width: 40%;">    
 									<?php endif; ?>
 
 								</div>
@@ -101,16 +106,26 @@
 				<!-- SIDEBAR USER TITLE -->
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
-						Name
+						<?php echo $_SESSION['login_user'];?>
 					</div>
 					<div class="profile-usertitle-job">
-					          Title
+						Developer
 					</div>
 				</div>
 				<!-- END SIDEBAR USER TITLE -->
 				<!-- SIDEBAR BUTTONS -->
 				<div class="profile-userbuttons">
-					<button type="button" class="btn btn-success btn-sm">Edit profile</button>
+					<form>
+					<button type="submit" class="btn btn-success btn-sm" formaction="profile.php">Edit profile</button>
+					</form>
+					<form>
+					
+					<button type="submit" class="btn btn-success btn-sm" formaction="logout.php">logout</button>
+					</form>
+					<?php } ?>
+					
+     	
+
 					<form>
 					<button type="submit" class="btn btn-danger btn-sm" formaction="index.php">HomePage</button>
 					</form>
@@ -121,23 +136,23 @@
 				<div class="profile-usermenu">
 					<ul class="nav">
 						<li class="">
-							<a href="#">
+							<a href="#" onclick="window.location.reload(true);">
 							<i class="glyphicon glyphicon-home"></i>
 							Overview </a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="#" onclick="window.location.reload(true);">
 							<i class="glyphicon glyphicon-user"></i>
 							Account Settings </a>
 						</li>
 						<li>
-							<a href="#" target="_blank">
+							<a href="#" onclick="window.location.reload(true);">
 							<i class="glyphicon glyphicon-ok"></i>
 							Educational info </a>
 						</li>
 						<li>
-							<a >
-							<i class="glyphicon glyphicon-flag" type="sumit" formaction=".php"></i>
+							<a href="contact-us.php" onclick="window.location.reload(true);">
+							<i class="glyphicon glyphicon-flag" ></i>
 							Help </a>
 						</li>
 					</ul>
@@ -147,7 +162,8 @@
 		</div>
 		<div class="col-md-9">
             <div class="profile-content">
-			   <h1>Some INfo AbOuT UsEr....
+			   <h1>User Info</h1>
+			   
 			</div>
 			
 		</div>
@@ -159,3 +175,11 @@
 <br>
 </body>
 </html>
+
+<?php
+         // session_start();
+     	if(!$_SESSION['login_user'])
+     	{
+            header("location:index.php");
+     	}
+     	?>
