@@ -118,10 +118,7 @@
 					<form>
 					<button type="submit" class="btn btn-success btn-sm" formaction="profile.php">Edit profile</button>
 					</form>
-					<form>
 					
-					<button type="submit" class="btn btn-success btn-sm" formaction="logout.php">logout</button>
-					</form>
 					<?php } ?>
 					
      	
@@ -163,7 +160,7 @@
 		<div class="col-md-9">
             <div class="profile-content">
 			   <h1>User Info</h1>
-			   
+			
 			</div>
 			
 		</div>

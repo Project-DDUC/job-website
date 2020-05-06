@@ -24,9 +24,8 @@
                 <input type ="text" placeholder="User Name" class="txt" name="username" required>
                 <input type ="password" placeholder="password" class="txt" name="password" required>
                 <input type="submit" name="submit" value="Sign In" class="btn1">
-
-        </div>
-        
+            
+</div>
 <?php include 'scripts.php';?>
 </body>
 </html>
@@ -34,7 +33,7 @@
 <?php
     if (isset($_POST['submit']))
         {     
-    include("con1.php");
+    include("connection.php");
     session_start();
     $username=$_POST['username'];
     $password=$_POST['password'];

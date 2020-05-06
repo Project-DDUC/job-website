@@ -3,20 +3,26 @@
 <head>
      <?php include 'head.php';?>
      <link rel="stylesheet" type="text/css" href="stylesignup.css">
-     
 </head>
 <body>
 	<?php include 'navbar.php';?>
     <div id="login-box">
       <div class="left-box">
         <h1> Sign Up</h1>
-        <form method ="post" action="application.php">
+        <form method ="post">
           <input type="text" name="username" placeholder="Username" required/>
           <input type="text" id="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Must look like  email@gmail.com" required/>
           <input type="password" id="pwd" name="pwd" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>  
-          <input type="password" name="password2" id="cnpwd"placeholder="Retype password" required/>
-          <input type="submit" name="signup-button" value="Sign up" />
-          </form>
+          <input type="password" name="password2" id="cnpwd"placeholder="Retype password" required/> 
+          <div class="dropdown">
+              <h5 class="dropbtn">sign up</h5>
+              <div class="dropdown-content">
+              <button type="submit" class="hbutton" formaction="application.php">As a Empolyee</button>
+              <button type="submit" class="hbutton" formaction="index.php"> As a Empolyer</button>
+                
+              </div>
+            </div>
+            </form>
           
         </div>
         <script type="text/javascript">
