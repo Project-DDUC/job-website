@@ -1,4 +1,3 @@
-
 <style>
 ul{
 	margin:0px;
@@ -41,23 +40,20 @@ ul li:hover ul
 		<div class="container-fluid">
 			<a class="navbar-brand" href="index.php">Job Seeking Platform</a> <button class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					
-					
-							<?php if( isset($_SESSION['login_user']) && !empty($_SESSION['login_user']) )
-								{
-								?>
-								<li class="nav-item">
-						<a class="nav-link active" href="index.php">Home</a>
-					</li>
-					<li class="nav-item">
+				<ul class="navbar-nav ml-auto" >
+				   <?php if( isset($_SESSION['login_user']) && !empty($_SESSION['login_user']) )
+					 {
+				    ?>
+					  <li class="nav-item" >
+						<a class="nav-link active" data-toggle="tab" href="index.php">Home</a>
+					  </li>
+					  <li class="nav-item">
 						<a class="nav-link" href="content.php">Content</a>
-					</li>
-					</li>
-					<li class="nav-item">
+					  </li>
+					   <li class="nav-item">
 						<a class="nav-link" href="slider.php">Search</a>
-					</li>
-					<li class="nav-item">
+					   </li>
+					  <li class="nav-item">
 						<a class="nav-link">About</a>
 						<ul>
 						 <li class="nav-item">
@@ -67,20 +63,22 @@ ul li:hover ul
 							<li class="nav-item">
 							 <a class="nav-link" href="aboutus.php">About Us</a>
 							</li> 
-						</ul>
-					</li>
-								  <li class="nav-item">
-									<a class="nav-link">Profile</a>
-									 <ul>
-									 <li>
-									   <a class="nav-link" href="profile.php">Profile</a>
-								     </li>
-									  <li>
-									   <a class="nav-link" href="logout.php">Logout</a>
-									  </li>
-								</ul>
-								</li>
-								<?php }else{ ?>
+						 </ul>
+					    </li>
+					  <li class="nav-item">
+						<a class="nav-link">Profile</a>
+						  <ul>
+						    <li>
+							  <a class="nav-link" href="profile.php">Profile</a>
+							</li>
+							<li>
+							   <a class="nav-link" href="logout.php">Logout</a>
+							</li>
+						   </ul>
+					  </li>
+					  <?php }
+					  
+				   else{ ?>
 					<li class="nav-item">
 						<a class="nav-link active" href="index.php">Home</a>
 					</li>
@@ -112,10 +110,8 @@ ul li:hover ul
 						</ul>
 					</li>
 									
-								<?php } ?> 
+				  <?php } ?> 
 						
-					
-
 				</ul>
 			</div>
 		</div>

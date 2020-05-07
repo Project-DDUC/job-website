@@ -32,20 +32,20 @@
 
 <?php
     if (isset($_POST['submit']))
-        {     
-    include("connection.php");
-    session_start();
-    $username=$_POST['username'];
-    $password=$_POST['password'];
-    $_SESSION['login_user']=$username; 
-    $query = mysqli_query($connect,"SELECT username FROM logins WHERE username='$username' and password='$password'");
-     if (mysqli_num_rows($query) != 0)
-    {
-     echo "<script language='javascript' type='text/javascript'> location.href='profile.php' </script>";   
-      }
-      else
-      {
-    echo "<script type='text/javascript'>alert('User Name Or Password Invalid!')</script>";
+    {     
+          include("connection.php");
+          session_start();
+          $username=$_POST['username'];
+          $password=$_POST['password'];
+          $_SESSION['login_user']=$username; 
+          $query = mysqli_query($connect,"SELECT username FROM logins WHERE username='$username' and password='$password'");
+          if (mysqli_num_rows($query) != 0)
+            {
+              echo "<script language='javascript' type='text/javascript'> location.href='profile.php' </script>";   
+            }
+          else
+            {
+              echo "<script type='text/javascript'>alert('User Name Or Password Invalid!')</script>";
+             }
     }
-    }
-    ?>
+ ?>
