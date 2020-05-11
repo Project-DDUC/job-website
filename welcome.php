@@ -1,8 +1,13 @@
 <?php
-    session_start();
-     if(isset($_SESSION['login_user']))
-     	 {
-     	?>
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
 <?php $seesion_user = "stint"; ?>
 <!DOCTYPE html>
 <html>
@@ -40,26 +45,7 @@
                 background-repeat: no-repeat;
                 background-size: 100%;
             }
-	 
-			table {
-				margin-top:50px;
-				border-collapse: collapse;
-				border-spacing: 0;
-				width: 100%;
-				border: 1px solid #ddd;
-				}
-
-				th{
-				text-align: left;
-				padding: 16px;
-				}
-				td{
-					text-align:center;
-				}
-
-				tr:nth-child(even) {
-				background-color:#505962;
-				}
+     
         </style>
     </head>
 
@@ -125,7 +111,7 @@
 				<!-- SIDEBAR USER TITLE -->
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
-						<?php echo $_SESSION['login_user'];?>
+						
 					</div>
 					<div class="profile-usertitle-job">
 						Developer
@@ -138,7 +124,7 @@
 					<button type="submit" class="btn btn-success btn-sm" formaction="profile.php">Edit profile</button>
 					</form>
 					
-					<?php } ?>
+				
 					
      	
 
@@ -156,7 +142,11 @@
 							<i class="glyphicon glyphicon-home"></i>
 							Overview </a>
 						</li>
-		
+						<li>
+							<a href="#" onclick="window.location.reload(true);">
+							<i class="glyphicon glyphicon-user"></i>
+							Account Settings </a>
+						</li>
 						<li>
 							<a href="#" onclick="window.location.reload(true);">
 							<i class="glyphicon glyphicon-ok"></i>
@@ -175,42 +165,7 @@
 		<div class="col-md-9">
             <div class="profile-content">
 			   <h1>User Info</h1>
-			   <table>
-						<tr>
-							<th>Name</th>
-							<td>Anubhav kharwar</td>
-						</tr>
-						<tr>
-							<th>Father's Name</th>
-							<td></td>
-							
-						</tr>
-						<tr>
-							<th>Mother's Name</th>
-							<td></td>
-						
-						</tr>
-						<tr>
-							<th>Age</th>
-							<td></td>
-						
-						</tr>
-						<tr>
-							<th>D.O.B.</th>
-							<td></td>
-							
-						</tr>
-						<tr>
-							<th>Email Adress</th>
-							<td></td>
-							
-						</tr>
-						<tr>
-							<th>Phone Number</th>
-							<td></td>
-							
-						</tr>
-						</table>	
+			
 			</div>
 			
 		</div>
