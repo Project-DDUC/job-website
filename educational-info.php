@@ -152,7 +152,7 @@
 				<div class="profile-usermenu">
 					<ul class="nav">
 						<li class="">
-							<a href="#" onclick="window.location.reload(true);">
+							<a href="profile.php" onclick="window.location.reload(true);">
 							<i class="glyphicon glyphicon-home"></i>
 							Overview </a>
 						</li>
@@ -174,39 +174,29 @@
 		</div>
 		<div class="col-md-9">
             <div class="profile-content">
-			   <h1>User Info</h1>
+			   <h1>Educational Info</h1>
 			   <table>
 						<tr>
-							<th>Name</th>
+							<th>class 10th board</th>
 							<td></td>
 						</tr>
 						<tr>
-							<th>Father's Name</th>
+							<th>class 10th cgpa</th>
 							<td></td>
 							
 						</tr>
 						<tr>
-							<th>Mother's Name</th>
+							<th>class 12th board</th>
 							<td></td>
 						
 						</tr>
 						<tr>
-							<th>Age</th>
+							<th>class 12th cgpa</th>
 							<td></td>
 						
 						</tr>
 						<tr>
-							<th>D.O.B.</th>
-							<td></td>
-							
-						</tr>
-						<tr>
-							<th>Email Adress</th>
-							<td></td>
-							
-						</tr>
-						<tr>
-							<th>Phone Number</th>
+							<th>graduation</th>
 							<td></td>
 							
 						</tr>

@@ -1,24 +1,24 @@
 <?php
 
-$link = mysqli_connect("localhost", "root", "", "login");
+$connect = mysqli_connect("localhost", "root", "", "login");
  
 
-if($link === false){
+if($connect === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
-        $username = mysqli_real_escape_string($link, $_REQUEST['username']);
-        $password = mysqli_real_escape_string($link, $_REQUEST['password']);
-        $email = mysqli_real_escape_string($link, $_REQUEST['email']);
+        $username = mysqli_real_escape_string($connect, $_REQUEST['username']);
+        $password = mysqli_real_escape_string($connect, $_REQUEST['password']);
+        $email = mysqli_real_escape_string($connect, $_REQUEST['email']);
         $sql = "INSERT INTO users (username, password ,email) VALUES ('$username','$password','$email')";
          
-        if(mysqli_query($link, $sql)){
+        if(mysqli_query($connect, $sql)){
         } else{
-            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($connect);
         }
   
     
     
-    mysqli_close($link);
+    mysqli_close($connect);
 
 ?>
 

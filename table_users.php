@@ -3,7 +3,7 @@
 // Create connection
 include("config.php");
 // Check connection
-if (!$link) {
+if (!$connect) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
@@ -22,11 +22,11 @@ $sql = "CREATE TABLE IF NOT EXISTS `users` (
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1
   ";
 
-if (mysqli_query($link, $sql)) {
+if (mysqli_query($connect, $sql)) {
 
 } else {
-  echo "Error in connection " . mysqli_error($link);
+  echo "Error in connection " . mysqli_error($connect);
 }
 
-mysqli_close($link);
+mysqli_close($connect);
 ?>

@@ -38,7 +38,7 @@
           $username=$_POST['username'];
           $password=$_POST['password'];
           $_SESSION['login_user']=$username; 
-          $query = mysqli_query($link,"SELECT username FROM users WHERE username='$username' and password='$password'");
+          $query = mysqli_query($connect,"SELECT username FROM users WHERE username='$username' and password='$password'");
           if (mysqli_num_rows($query) != 0)
             {
               echo "<script language='javascript' type='text/javascript'> location.href='profile.php' </script>";   
