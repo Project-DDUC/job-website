@@ -102,7 +102,7 @@ body {
     <div class="card">
       <h3>Are you an Employee</h3>
       <div class="image">
-      <img src="empolyee.jpg">
+      <img src="employee.jpg">
       </div>
       <form method=post>
       <button type="submit" class="hbutton" formaction="application.php"  >Continue</button>
@@ -114,7 +114,7 @@ body {
     <div class="card">
       <h3>Are you an Employer</h3>
       <div class="image">
-      <img src="empolyer.jpg">
+      <img src="employer.jpg">
       </div>
       <form method=post>
       <button type="submit" class="hbutton" formaction="empapplication.php" >Continue</button>
